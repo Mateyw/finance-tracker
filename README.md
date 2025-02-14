@@ -12,4 +12,4 @@ or login with password:
 3. Copy absolute path to your create-db.sql file
 
 4. Insert command to execute sql script:
-   - "SOURCE C:\file\to\your\path"
+   - "SOURCE C:\path\to\your\file"
