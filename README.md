@@ -1,22 +1,15 @@
 # Finance-Tracker
 
-## Create Database
+## Create Database Instructions (create-db.sql)
 
-1. CREATE DATABASE finance_tracker;
+1. Download and / open XAMPP
 
-2. CREATE TABLE users (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    username VARCHAR(100) NOT NULL,
-    email VARCHAR(100) NOT NULL UNIQUE,
-    password VARCHAR(255) NOT NULL
-);
+2. Insert command to login:
+   - "mysql -u root"
+or login with password:
+   - "mysql -u root -p"
 
-3. CREATE TABLE transactions (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    user_id INT,
-    type ENUM('income', 'expense') NOT NULL,
-    category VARCHAR(100),
-    amount DECIMAL(10,2) NOT NULL,
-    date DATE NOT NULL,
-    FOREIGN KEY (user_id) REFERENCES users(id)
-);
+3. Copy absolute path to your create-db.sql file
+
+4. Insert command to execute sql script:
+   - "SOURCE C:\file\to\your\path"
