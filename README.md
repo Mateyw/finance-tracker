@@ -2,16 +2,16 @@
 
 ## Create Database
 
-- CREATE DATABASE finance_tracker;
+1. CREATE DATABASE finance_tracker;
 
-- CREATE TABLE users (
+2. CREATE TABLE users (
     id INT AUTO_INCREMENT PRIMARY KEY,
     username VARCHAR(100) NOT NULL,
     email VARCHAR(100) NOT NULL UNIQUE,
     password VARCHAR(255) NOT NULL
 );
 
-- CREATE TABLE transactions (
+3. CREATE TABLE transactions (
     id INT AUTO_INCREMENT PRIMARY KEY,
     user_id INT,
     type ENUM('income', 'expense') NOT NULL,
@@ -19,4 +19,4 @@
     amount DECIMAL(10,2) NOT NULL,
     date DATE NOT NULL,
     FOREIGN KEY (user_id) REFERENCES users(id)
-- );
+);
