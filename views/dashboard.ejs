@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <h1>Dashboard</h1>
+    <canvas id="transactionsChart" width="400" height="200"></canvas>
+    <script>
+        const transactions = <%= JSON.stringify(transactions) %>;
+
+        const income = transactions.filter(t => t.type === 'income').map(t => t.amount);
+        const expenses = transactions.filter(t => t.type === 'expense').map(t => t.amount);
+        const categories = transactions.map(t => t.category);
+        const dates = transactions.map(t => new Date(t.date).toLocaleDateString());
+
+        const ctx = document.getElementById('transactionsChart').getContext('2d');
+        const transactionsChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: dates,
+                datasets: [
+                    {
+                        label: 'Income',
+                        data: income,
+                        borderColor: 'green',
+                        fill: false
+                    },
+                    {
+                        label: 'Expenses',
+                        data: expenses,
+                        borderColor: 'red',
+                        fill: false
+                    }
+                ]
+            },
+            options: {
+                scales: {
+                    x: {
+                        type: 'time',
+                        time: {
+                            unit: 'day'
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>
