@@ -1,6 +1,10 @@
 import bcrypt from 'bcryptjs';
 import {findUserByEmail} from '../models/userModel.js';
 
+export const getLogin = (req, res) => {
+    res.render('login');
+};
+
 export const loginUser = async (req, res) => {
     const {email, password} = req.body;
 

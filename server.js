@@ -6,18 +6,26 @@ dotenv.config();
 import express from 'express';
 const app = express();
 
+import path from 'path';
+import {fileURLToPath} from 'url';
+
 // Import session library
 import session from 'express-session';
 
 // Import custom routes
+import indexRoutes from './routes/index.js';
+import dashboardRoutes from './routes/dashboard.js';
 import loginRoutes from './routes/login.js';
 import registerRoutes from './routes/register.js';
-import dashboardRoutes from './routes/dashboard.js';
 import errorRoutes from './routes/404.js';
+
+// Convert import.meta.url to __dirname equivalent
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 // Set the view engine to EJS and the views folder
 app.set('view engine', 'ejs');
-app.set('views', './views');
+app.set('views', path.join(__dirname, 'views'));
 
 // Middleware to parse URL-encoded data
 app.use(express.urlencoded({extended: true}));
@@ -32,14 +40,15 @@ app.use(
         secret: 'your_secret_key',
         resave: false,
         saveUninitialized: true,
-        cookie: {secure: false}, // Set to true if using HTTPS
-    }),
+        cookie: {secure: false} // Set to true if using HTTPS
+    })
 );
 
 // Routes
+app.use(indexRoutes);
+app.use(dashboardRoutes);
 app.use(loginRoutes);
 app.use(registerRoutes);
-app.use(dashboardRoutes);
 app.use(errorRoutes);
 
 const PORT = process.env.PORT || 8000;

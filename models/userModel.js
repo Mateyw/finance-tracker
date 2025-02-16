@@ -1,9 +1,40 @@
 import db from '../database/db-connect.js';
+import bcrypt from 'bcryptjs';
 
-export const createUser = (username, email, hashedPassword, callback) => {
+export const createUser = (
+    firstName,
+    lastName,
+    email,
+    hashedPassword,
+    callback
+) => {
     const query =
-        'INSERT INTO users (username, email, password) VALUES (?, ?, ?)';
-    db.query(query, [username, email, hashedPassword], callback);
+        'INSERT INTO users (firstName, lastName, email, password) VALUES (?, ?, ?, ?)';
+    db.query(query, [firstName, lastName, email, hashedPassword], callback);
+};
+
+export const loginUser = (email, password, callback) => {
+    findUserByEmail(email, (err, results) => {
+        if (err) {
+            return callback(err);
+        }
+        if (results.length === 0) {
+            return callback(new Error('User not found'));
+        }
+
+        const user = results[0];
+        bcrypt.compare(password, user.password, (err, isMatch) => {
+            if (err) {
+                return callback(err);
+            }
+            if (!isMatch) {
+                return callback(new Error('Invalid password'));
+            }
+
+            // Passwords match, proceed to redirect user to dashboard page
+            callback(null, user);
+        });
+    });
 };
 
 export const findUserByEmail = (email, callback) => {
