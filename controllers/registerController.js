@@ -2,15 +2,26 @@ import bcrypt from 'bcryptjs';
 import {createUser} from '../models/userModel.js';
 
 export const getRegister = (req, res) => {
-    res.render('register');
+    return res.render('register', {message: null});
 };
 
 export const registerUser = async (req, res) => {
-    const {username, email, password} = req.body;
+    const {firstName, lastName, email, password, confirmPassword} = req.body;
+
+    if (password !== confirmPassword) {
+        return res.render('register', {
+            message: 'Passwords do not match'
+        });
+    }
+
     const hashedPassword = await bcrypt.hash(password, 10);
 
-    createUser(username, email, hashedPassword, (err, result) => {
-        if (err) throw err;
+    createUser(firstName, lastName, email, hashedPassword, (err, result) => {
+        if (err) {
+            return res.render('register', {
+                message: 'Database error occurred!'
+            });
+        }
         res.redirect('/login');
     });
 };

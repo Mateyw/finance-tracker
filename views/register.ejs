@@ -14,20 +14,24 @@
         <div class="card">
             <h2>Sign Up</h2>
             <p>Fill in the form to create an account or use social register method.</p>
-            <div class="input-group">
-                <input type="text" name="firstName" id="firstName" placeholder="First Name">
-                <input type="text" name="lastName" id="lastName" placeholder="Last Name">
-                <input type="email" name="email" id="email" placeholder="Email">
-                <div class="password-wrapper">
-                    <input type="password" placeholder="Password">
-                    <span>👁️</span>
+            <form id="registerForm" action="/register" method="POST">
+                <div class="input-group">
+                    <input type="text" name="firstName" id="firstName" placeholder="First Name" required>
+                    <input type="text" name="lastName" id="lastName" placeholder="Last Name" required>
+                    <input type="email" name="email" id="email" placeholder="Email" required>
+                    <div class="password-wrapper">
+                        <input type="password" name="password" id="password" placeholder="Password" required>
+                        <span>👁️</span>
+                    </div>
+                    <div class="password-wrapper">
+                        <input type="password" name="confirmPassword" id="confirmPassword" placeholder="Repeat Password"
+                            required>
+                        <span>👁️</span>
+                    </div>
                 </div>
-                <div class="password-wrapper">
-                    <input type="password" placeholder="Repeat Password">
-                    <span>👁️</span>
-                </div>
-            </div>
-            <button class="btn">Register</button>
+                <button type="submit" class="btn">Register</button>
+            </form>
+
 
             <!-- <p style="margin-top: 10px; font-size: 12px;">or sign up with</p>
             <div class="social-login">
@@ -44,6 +48,12 @@
         <div class="right-section">
             <h1>Registration</h1>
             <p>Create your free account today! Fill in the form or use social register method.</p>
+        </div>
+
+        <div class="error-section">
+            <p id="error-message">
+                <%= message %>
+            </p>
         </div>
     </div>
 </body>
