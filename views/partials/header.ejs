@@ -1,0 +1,21 @@
+<header>
+    <div class="header-title">Finance Tracker</div>
+    <div class="nav-container">
+        <ul class="nav">
+            <li><a href="/index">Dashboard</a></li>
+            <li><a href="/add-transaction">New Transaction</a></li>
+            <% if (!userId) { %>
+                <li><a href="/login">Login</a></li>
+                <li><a href="/register">Sign Up</a></li>
+                <% } else { %>
+                    <li><a href="/profile"><i class="fa-solid fa-user"></i></a></li>
+                    <% } %>
+        </ul>
+    </div>
+
+    <% if (userId) { %>
+        <div class="logout-container">
+            <a href="/logout" id="btn-logout">Logout</a>
+        </div>
+        <% } %>
+</header>

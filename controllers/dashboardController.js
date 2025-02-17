@@ -5,6 +5,6 @@ export const getDashboard = (req, res) => {
 
     getTransactionsByUserId(userId, (err, transactions) => {
         if (err) throw err;
-        res.render('dashboard', {transactions});
+        res.render('dashboard', {transactions, userId});
     });
 };

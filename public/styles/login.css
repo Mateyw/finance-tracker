@@ -1,20 +1,3 @@
-/* login.css - Identisch mit register.css, aber für Login angepasst */
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-}
-
-body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #f4f7fc;
-}
-
 .container {
     display: flex;
     align-items: center;
