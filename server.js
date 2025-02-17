@@ -19,6 +19,7 @@ import loginRoutes from './routes/login.js';
 import registerRoutes from './routes/register.js';
 import addTransactionRoutes from './routes/addTransaction.js';
 import logoutRoutes from './routes/logout.js';
+import checkSessionState from './routes/session.js';
 import errorRoutes from './routes/404.js';
 
 // Convert import.meta.url to __dirname equivalent
@@ -41,8 +42,12 @@ app.use(
     session({
         secret: process.env.SESSION_SECRET,
         resave: false,
-        saveUninitialized: true,
-        cookie: {secure: false} // Set to true if using HTTPS
+        saveUninitialized: false,
+        cookie: {
+            maxAge: 30 * 60 * 1000, // 30 minutes
+            httpOnly: true,
+            secure: false // Set to true in production with HTTPS
+        }
     })
 );
 
@@ -53,6 +58,7 @@ app.use(loginRoutes);
 app.use(registerRoutes);
 app.use(addTransactionRoutes);
 app.use(logoutRoutes);
+app.use(checkSessionState);
 app.use(errorRoutes);
 
 const PORT = process.env.PORT || 8000;

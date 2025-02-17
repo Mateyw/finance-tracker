@@ -13,7 +13,7 @@ export const createUser = (
     db.query(query, [firstName, lastName, email, hashedPassword], callback);
 };
 
-export const loginUser = (email, password, callback) => {
+export const authenticateUser = (email, password, callback) => {
     findUserByEmail(email, (err, results) => {
         if (err) {
             return callback(err);
@@ -31,7 +31,7 @@ export const loginUser = (email, password, callback) => {
                 return callback(new Error('Invalid password'));
             }
 
-            // Passwords match, proceed to redirect user to dashboard page
+            // Passwords match, return the user
             callback(null, user);
         });
     });

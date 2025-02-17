@@ -51,11 +51,14 @@
                 </div>
 
                 <!-- Error Section -->
-                <div class="error-section">
-                    <p id="error-message">
-                        <%= message %>
-                    </p>
-                </div>
+
+                <% if (loginAttempted && message) { %>
+                    <div class="error-section">
+                        <p id="error-message">
+                            <%= message %>
+                        </p>
+                    </div>
+                    <% } %>
             </div>
         </main>
         <%- include('./partials/footer.ejs') %>
