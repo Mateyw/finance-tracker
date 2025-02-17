@@ -5,6 +5,7 @@ footer {
     width: 100vw;
     height: clamp(50px, 10vh, 100px);
     background-color: #58b9ff;
+    color: white;
 }
 
 .nav {
