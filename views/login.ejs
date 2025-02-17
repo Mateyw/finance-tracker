@@ -14,27 +14,36 @@
         <div class="card">
             <h2>Login</h2>
             <p>Enter your credentials to access your account.</p>
-            <div class="input-group">
-                <input type="email" name="email" id="email" placeholder="Email">
-                <div class="password-wrapper">
-                    <input type="password" placeholder="Password">
-                    <span>👁️</span>
+            <form id="loginForm" action="/login" method="POST">
+                <div class="input-group">
+                    <input type="email" name="email" id="email" placeholder="Email">
+                    <div class="password-wrapper">
+                        <input type="password" name="password" placeholder="Password">
+                        <span>👁️</span>
+                    </div>
                 </div>
-            </div>
-            <button class="btn">Login</button>
-            <!-- <p style="margin-top: 10px; font-size: 12px;">or log in with</p>
-            <div class="social-login">
-                <img src="https://cdn-icons-png.flaticon.com/512/300/300221.png" alt="Google">
-                <img src="https://cdn-icons-png.flaticon.com/512/179/179309.png" alt="Apple">
-                <img src="https://cdn-icons-png.flaticon.com/512/145/145802.png" alt="Facebook">
-            </div> -->
-        </div>
+                <button type="submit" class="btn">Login</button>
+                <!-- <p style="margin-top: 10px; font-size: 12px;">or log in with</p>
+                <div class="social-login">
+                    <img src="https://cdn-icons-png.flaticon.com/512/300/300221.png" alt="Google">
+                    <img src="https://cdn-icons-png.flaticon.com/512/179/179309.png" alt="Apple">
+                    <img src="https://cdn-icons-png.flaticon.com/512/145/145802.png" alt="Facebook">
+                </div> -->
 
+            </form>
+        </div>
         <!-- Right Section -->
         <div class="right-section">
             <h1>Welcome Back</h1>
             <p>Log in to continue and manage your account.</p>
             <a href="./register" class="cta-button">SIGN IN</a>
+        </div>
+
+        <!-- Error Section -->
+        <div class="error-section">
+            <p id="error-message">
+                <%= message %>
+            </p>
         </div>
     </div>
 </body>
