@@ -5,72 +5,87 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/styles/reset.css">
+    <link rel="stylesheet" href="/styles/styles.css">
+    <link rel="stylesheet" href="/styles/partialStyles/header.css">
+    <link rel="stylesheet" href="/styles/partialStyles/footer.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
 <body>
-    <h1>Dashboard</h1>
-    <div>
-        <canvas id="transactionsChart" width="400" height="200"></canvas>
-    </div>
 
-    <script>
+    <%- include('./partials/header.ejs') %>
 
-        const transactions = [
-            { type: 'income', amount: 500, category: 'Salary', date: '2025-02-01' },
-            { type: 'expense', amount: 200, category: 'Food', date: '2025-02-03' },
-            { type: 'income', amount: 700, category: 'Freelance', date: '2025-02-05' },
-            { type: 'expense', amount: 150, category: 'Transport', date: '2025-02-06' }
-        ];
+        <main class="main">
+            <h1>Dashboard</h1>
+            <div>
+                <canvas id="transactionsChart" width="400" height="200"></canvas>
+            </div>
 
-        const income = transactions.filter(t => t.type === 'income').map(t => t.amount);
-        const expenses = transactions.filter(t => t.type === 'expense').map(t => t.amount);
-        const dates = transactions.map(t => new Date(t.date).toLocaleDateString());
+        </main>
+        <script>
 
-        const ctx = document.getElementById('transactionsChart').getContext('2d');
-        new Chart(ctx, {
-            type: 'bar',
-            data: {
-                labels: dates,
-                datasets: [
-                    {
-                        label: 'Income',
-                        data: income,
-                        borderColor: 'green',
-                        backgroundColor: 'rgba(0, 255, 0, 0.2)',
-                        fill: true
-                    },
-                    {
-                        label: 'Expenses',
-                        data: expenses,
-                        borderColor: 'red',
-                        backgroundColor: 'rgba(255, 0, 0, 0.2)',
-                        fill: true
-                    }
-                ]
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: true,
-                scales: {
-                    x: {
-                        type: 'category', // Verwende 'category' anstelle von 'time'
-                        title: {
-                            display: true,
-                            text: 'Date'
+            const transactions = [
+                { type: 'income', amount: 500, category: 'Salary', date: '2025-02-01' },
+                { type: 'expense', amount: 200, category: 'Food', date: '2025-02-03' },
+                { type: 'income', amount: 700, category: 'Freelance', date: '2025-02-05' },
+                { type: 'expense', amount: 150, category: 'Transport', date: '2025-02-06' }
+            ];
+
+            const income = transactions.filter(t => t.type === 'income').map(t => t.amount);
+            const expenses = transactions.filter(t => t.type === 'expense').map(t => t.amount);
+            const dates = transactions.map(t => new Date(t.date).toLocaleDateString());
+
+            const ctx = document.getElementById('transactionsChart').getContext('2d');
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: dates,
+                    datasets: [
+                        {
+                            label: 'Income',
+                            data: income,
+                            borderColor: 'green',
+                            backgroundColor: 'rgba(0, 255, 0, 0.2)',
+                            fill: true
+                        },
+                        {
+                            label: 'Expenses',
+                            data: expenses,
+                            borderColor: 'red',
+                            backgroundColor: 'rgba(255, 0, 0, 0.2)',
+                            fill: true
                         }
-                    },
-                    y: {
-                        beginAtZero: true,
-                        title: {
-                            display: true,
-                            text: 'Amount in €'
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: true,
+                    scales: {
+                        x: {
+                            type: 'category', // Verwende 'category' anstelle von 'time'
+                            title: {
+                                display: true,
+                                text: 'Date'
+                            }
+                        },
+                        y: {
+                            beginAtZero: true,
+                            title: {
+                                display: true,
+                                text: 'Amount in €'
+                            }
                         }
                     }
                 }
-            }
-        });
-    </script>
+            });
+        </script>
+
+        <%- include('./partials/footer.ejs') %>
+
 </body>
 
 </html>

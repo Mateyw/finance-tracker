@@ -2,12 +2,12 @@ import bcrypt from 'bcryptjs';
 import {findUserByEmail} from '../models/userModel.js';
 
 export const getLogin = (req, res) => {
-    return res.render('login', {message: null});
+    return res.render('login', {message: null, userId: req.session.userId});
 };
 
 export const loginUser = async (req, res) => {
     const {email, password} = req.body;
-    console.log(email, password);
+    // console.log(email, password);
 
     findUserByEmail(email, async (err, results) => {
         if (err) throw err;
@@ -24,7 +24,10 @@ export const loginUser = async (req, res) => {
                 .render('login', {message: 'Invalid credentials'});
         }
 
+        // ✅ User-ID in der Session speichern
         req.session.userId = user.id;
+        console.log(`User Id saved in session variable 'user.id': `, user.id);
+
         res.redirect('/dashboard');
     });
 };

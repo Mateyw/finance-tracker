@@ -6,57 +6,69 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" type="text/css" href="/styles/reset.css">
+    <link rel="stylesheet" type="text/css" href="/styles/styles.css">
     <link rel="stylesheet" type="text/css" href="/styles/register.css">
+    <link rel="stylesheet" href="/styles/partialStyles/header.css">
+    <link rel="stylesheet" href="/styles/partialStyles/footer.css">
 </head>
 
 <body>
-    <div class="container">
-        <div class="card">
-            <h2>Sign Up</h2>
-            <p>Fill in the form to create an account or use social register method.</p>
-            <form id="registerForm" action="/register" method="POST">
-                <div class="input-group">
-                    <input type="text" name="firstName" id="firstName" placeholder="First Name" required>
-                    <input type="text" name="lastName" id="lastName" placeholder="Last Name" required>
-                    <input type="email" name="email" id="email" placeholder="Email" required>
-                    <div class="password-wrapper">
-                        <input type="password" name="password" id="password" placeholder="Password" required>
-                        <span>👁️</span>
-                    </div>
-                    <div class="password-wrapper">
-                        <input type="password" name="confirmPassword" id="confirmPassword" placeholder="Repeat Password"
-                            required>
-                        <span>👁️</span>
-                    </div>
+    <%- include('./partials/header.ejs') %>
+        <main class="main">
+            <div class="container">
+                <div class="card">
+                    <h2>Sign Up</h2>
+                    <p>Fill in the form to create an account or use social register method.</p>
+                    <form id="registerForm" action="/register" method="POST">
+                        <div class="input-group">
+                            <input type="text" name="firstName" id="firstName" placeholder="First Name" required>
+                            <input type="text" name="lastName" id="lastName" placeholder="Last Name" required>
+                            <input type="email" name="email" id="email" placeholder="Email" required>
+                            <div class="password-wrapper">
+                                <input type="password" name="password" id="password" placeholder="Password" required>
+                                <span>👁️</span>
+                            </div>
+                            <div class="password-wrapper">
+                                <input type="password" name="confirmPassword" id="confirmPassword"
+                                    placeholder="Repeat Password" required>
+                                <span>👁️</span>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn">Register</button>
+                    </form>
+
+
+                    <!-- <p style="margin-top: 10px; font-size: 12px;">or sign up with</p>
+                <div class="social-login">
+                    <img src="https://cdn-icons-png.flaticon.com/512/300/300221.png" alt="Google">
+                    <img src="https://cdn-icons-png.flaticon.com/512/179/179309.png" alt="Apple">
+                    <img src="https://cdn-icons-png.flaticon.com/512/145/145802.png" alt="Facebook">
+                </div> -->
+
+                    <!-- Already have an account? -->
+                    <p class="login-link">Already have an account? <a href="/login">Log in</a></p>
                 </div>
-                <button type="submit" class="btn">Register</button>
-            </form>
 
+                <!-- Right Section -->
+                <div class="right-section">
+                    <h1>Registration</h1>
+                    <p>Create your free account today! Fill in the form or use social register method.</p>
+                </div>
 
-            <!-- <p style="margin-top: 10px; font-size: 12px;">or sign up with</p>
-            <div class="social-login">
-                <img src="https://cdn-icons-png.flaticon.com/512/300/300221.png" alt="Google">
-                <img src="https://cdn-icons-png.flaticon.com/512/179/179309.png" alt="Apple">
-                <img src="https://cdn-icons-png.flaticon.com/512/145/145802.png" alt="Facebook">
-            </div> -->
+                <!-- Error Section -->
+                <div class="error-section">
+                    <p id="error-message">
+                        <%= message %>
+                    </p>
+                </div>
+            </div>
+        </main>
 
-            <!-- Already have an account? -->
-            <p class="login-link">Already have an account? <a href="/login">Log in</a></p>
-        </div>
-
-        <!-- Right Section -->
-        <div class="right-section">
-            <h1>Registration</h1>
-            <p>Create your free account today! Fill in the form or use social register method.</p>
-        </div>
-
-        <!-- Error Section -->
-        <div class="error-section">
-            <p id="error-message">
-                <%= message %>
-            </p>
-        </div>
-    </div>
+        <%- include('./partials/footer.ejs') %>
 </body>
 
 </html>

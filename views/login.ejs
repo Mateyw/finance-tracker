@@ -6,46 +6,59 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" type="text/css" href="/styles/reset.css">
+    <link rel="stylesheet" type="text/css" href="/styles/styles.css">
     <link rel="stylesheet" type="text/css" href="/styles/login.css">
+    <link rel="stylesheet" href="/styles/partialStyles/header.css">
+    <link rel="stylesheet" href="/styles/partialStyles/footer.css">
+
 </head>
 
 <body>
-    <div class="container">
-        <div class="card">
-            <h2>Login</h2>
-            <p>Enter your credentials to access your account.</p>
-            <form id="loginForm" action="/login" method="POST">
-                <div class="input-group">
-                    <input type="email" name="email" id="email" placeholder="Email">
-                    <div class="password-wrapper">
-                        <input type="password" name="password" placeholder="Password">
-                        <span>👁️</span>
-                    </div>
+    <%- include('./partials/header.ejs') %>
+
+        <main class="main">
+            <div class="container">
+                <div class="card">
+                    <h2>Login</h2>
+                    <p>Enter your credentials to access your account.</p>
+                    <form id="loginForm" action="/login" method="POST">
+                        <div class="input-group">
+                            <input type="email" name="email" id="email" placeholder="Email">
+                            <div class="password-wrapper">
+                                <input type="password" name="password" placeholder="Password">
+                                <span>👁️</span>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn">Login</button>
+                        <!-- <p style="margin-top: 10px; font-size: 12px;">or log in with</p>
+                    <div class="social-login">
+                        <img src="https://cdn-icons-png.flaticon.com/512/300/300221.png" alt="Google">
+                        <img src="https://cdn-icons-png.flaticon.com/512/179/179309.png" alt="Apple">
+                        <img src="https://cdn-icons-png.flaticon.com/512/145/145802.png" alt="Facebook">
+                    </div> -->
+
+                    </form>
                 </div>
-                <button type="submit" class="btn">Login</button>
-                <!-- <p style="margin-top: 10px; font-size: 12px;">or log in with</p>
-                <div class="social-login">
-                    <img src="https://cdn-icons-png.flaticon.com/512/300/300221.png" alt="Google">
-                    <img src="https://cdn-icons-png.flaticon.com/512/179/179309.png" alt="Apple">
-                    <img src="https://cdn-icons-png.flaticon.com/512/145/145802.png" alt="Facebook">
-                </div> -->
+                <!-- Right Section -->
+                <div class="right-section">
+                    <h1>Welcome Back</h1>
+                    <p>Log in to continue and manage your account.</p>
+                    <a href="./register" class="cta-button">SIGN IN</a>
+                </div>
 
-            </form>
-        </div>
-        <!-- Right Section -->
-        <div class="right-section">
-            <h1>Welcome Back</h1>
-            <p>Log in to continue and manage your account.</p>
-            <a href="./register" class="cta-button">SIGN IN</a>
-        </div>
-
-        <!-- Error Section -->
-        <div class="error-section">
-            <p id="error-message">
-                <%= message %>
-            </p>
-        </div>
-    </div>
+                <!-- Error Section -->
+                <div class="error-section">
+                    <p id="error-message">
+                        <%= message %>
+                    </p>
+                </div>
+            </div>
+        </main>
+        <%- include('./partials/footer.ejs') %>
 </body>
 
 </html>
