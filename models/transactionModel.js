@@ -12,9 +12,14 @@ export const addTransactionToDb = (
     category,
     type,
     date,
+    state,
     callback
 ) => {
     const query =
-        'INSERT INTO transactions (user_id, name, amount, category, type, date) VALUES (?, ?, ?, ?, ?, ?)';
-    db.query(query, [userId, name, amount, category, type, date], callback);
+        'INSERT INTO transactions (user_id, name, amount, category, type, date, state) VALUES (?, ?, ?, ?, ?, ?, ?)';
+    db.query(
+        query,
+        [userId, name, amount, category, type, date, state],
+        callback
+    );
 };

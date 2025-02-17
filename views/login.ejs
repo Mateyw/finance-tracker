@@ -14,7 +14,6 @@
     <link rel="stylesheet" type="text/css" href="/styles/login.css">
     <link rel="stylesheet" href="/styles/partialStyles/header.css">
     <link rel="stylesheet" href="/styles/partialStyles/footer.css">
-
 </head>
 
 <body>
@@ -51,14 +50,10 @@
                 </div>
 
                 <!-- Error Section -->
-
-                <% if (loginAttempted && message) { %>
-                    <div class="error-section">
-                        <p id="error-message">
-                            <%= message %>
-                        </p>
-                    </div>
-                    <% } %>
+                <div class="error-section">
+                    <p id="error-message">
+                    </p>
+                </div>
             </div>
         </main>
         <%- include('./partials/footer.ejs') %>
