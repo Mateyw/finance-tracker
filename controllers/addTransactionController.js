@@ -5,12 +5,14 @@ export const getAddTransaction = (req, res) => {
     const userId = req.session.userId;
 
     if (!userId) {
-        return res.status(401).send('Unauthorized');
+        req.session.message = 'Please log in to view this page';
+        return res.status(401).redirect('/login');
     }
 
     return res.render('addTransaction', {
         message: null,
-        userId: req.session.userId
+        userId: req.session.userId,
+        title: 'Add Transaction'
     });
 };
 

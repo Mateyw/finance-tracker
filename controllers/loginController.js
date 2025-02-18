@@ -1,7 +1,11 @@
 import {authenticateUser} from '../models/userModel.js';
 
 export const getLogin = (req, res) => {
-    return res.render('login', {message: null, userId: req.session.userId});
+    return res.render('login', {
+        message: null,
+        userId: req.session.userId,
+        title: 'Login'
+    });
 };
 
 export const loginUser = async (req, res) => {
@@ -11,7 +15,8 @@ export const loginUser = async (req, res) => {
         if (err) {
             return res.status(401).render('login', {
                 message: err.message,
-                userId: req.session.userId
+                userId: req.session.userId,
+                title: 'Login'
             });
         }
 

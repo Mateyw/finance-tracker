@@ -6,6 +6,9 @@ header {
     height: clamp(50px, 10vh, 100px);
     background-color: #58b9ff;
     color: white;
+    position: relative;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .header-title {

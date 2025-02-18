@@ -2,7 +2,11 @@ import bcrypt from 'bcryptjs';
 import {createUser} from '../models/userModel.js';
 
 export const getRegister = (req, res) => {
-    return res.render('register', {message: null, userId: req.session.userId});
+    return res.render('register', {
+        message: null,
+        userId: req.session.userId,
+        title: 'Register'
+    });
 };
 
 export const registerUser = async (req, res) => {

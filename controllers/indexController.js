@@ -1,8 +1,14 @@
 export const getIndex = (req, res) => {
-    // Check if user is logged in by checking if session variable userid exists
-    if (req.session.userId) {
-        res.redirect('dashboard');
+    // If user is not logged in, render login page
+    if (!req.session.userId) {
+        return res.render('login', {
+            title: 'Login',
+            userId: req.session.userId
+        });
     }
-    // Redirect to login page if user is not logged in
-    res.redirect('login');
+    // Render Dashbaord (Index) page if user is logged in
+    return res.render('dashboard', {
+        title: 'Dashboard',
+        userId: req.session.userId
+    });
 };

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        <%= title %>
+    </title>
+    <%- include('./partials/layout.ejs') %>
+        <link rel="stylesheet" type="text/css" href="/styles/profile.css">
+
+</head>
+
+<body>
+    <%- include('./partials/header.ejs') %>
+
+        <main class="main">
+            <div class="profile-container">
+                <div class="profile-card">
+                    <h2>My Profile</h2>
+                    <div class="profile-info">
+                        <label>Full Name:</label>
+                        <input type="text" value="John Doe" disabled>
+
+                        <label>Email:</label>
+                        <input type="email" value="johndoe@example.com" disabled>
+
+                        <label>Password:</label>
+                        <input type="password" value="********" disabled>
+
+                        <label>Account Created:</label>
+                        <input type="text" value="January 1, 2023" disabled>
+
+                        <button class="edit-btn">Edit Profile</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <%- include('./partials/footer.ejs') %>
+</body>
+
+</html>

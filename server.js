@@ -20,6 +20,7 @@ import registerRoutes from './routes/register.js';
 import addTransactionRoutes from './routes/addTransaction.js';
 import logoutRoutes from './routes/logout.js';
 import checkSessionState from './routes/session.js';
+import profileRoutes from './routes/profile.js';
 import errorRoutes from './routes/404.js';
 
 // Convert import.meta.url to __dirname equivalent
@@ -59,6 +60,7 @@ app.use(registerRoutes);
 app.use(addTransactionRoutes);
 app.use(logoutRoutes);
 app.use(checkSessionState);
+app.use(profileRoutes);
 app.use(errorRoutes);
 
 const PORT = process.env.PORT || 8000;
