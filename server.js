@@ -43,9 +43,9 @@ app.use(
     session({
         secret: process.env.SESSION_SECRET,
         resave: false,
-        saveUninitialized: false,
+        saveUninitialized: true,
         cookie: {
-            maxAge: 30 * 60 * 1000, // 30 minutes
+            maxAge: 60 * 30 * 1000, // 30 minutes
             httpOnly: true,
             secure: false // Set to true in production with HTTPS
         }

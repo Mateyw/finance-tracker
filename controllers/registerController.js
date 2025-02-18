@@ -12,6 +12,12 @@ export const getRegister = (req, res) => {
 export const registerUser = async (req, res) => {
     const {firstName, lastName, email, password, confirmPassword} = req.body;
 
+    const date = new Date();
+
+    const created = `${date.getFullYear()}-${
+        date.getMonth() + 1
+    }-${date.getDate()}`;
+
     if (password !== confirmPassword) {
         return res.render('register', {
             message: 'Passwords do not match'
@@ -20,12 +26,19 @@ export const registerUser = async (req, res) => {
 
     const hashedPassword = await bcrypt.hash(password, 10);
 
-    createUser(firstName, lastName, email, hashedPassword, (err, result) => {
-        if (err) {
-            return res.render('register', {
-                message: 'Database error occurred!'
-            });
+    createUser(
+        firstName,
+        lastName,
+        email,
+        hashedPassword,
+        created,
+        (err, result) => {
+            if (err) {
+                return res.render('register', {
+                    message: 'Database error occurred!'
+                });
+            }
+            res.redirect('/login');
         }
-        res.redirect('/login');
-    });
+    );
 };

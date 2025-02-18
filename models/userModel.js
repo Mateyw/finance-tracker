@@ -6,11 +6,16 @@ export const createUser = (
     lastName,
     email,
     hashedPassword,
+    created,
     callback
 ) => {
     const query =
-        'INSERT INTO users (firstName, lastName, email, password) VALUES (?, ?, ?, ?)';
-    db.query(query, [firstName, lastName, email, hashedPassword], callback);
+        'INSERT INTO users (firstName, lastName, email, password, created) VALUES (?, ?, ?, ?, ?)';
+    db.query(
+        query,
+        [firstName, lastName, email, hashedPassword, created],
+        callback
+    );
 };
 
 export const authenticateUser = (email, password, callback) => {
@@ -40,4 +45,30 @@ export const authenticateUser = (email, password, callback) => {
 export const findUserByEmail = (email, callback) => {
     const query = 'SELECT * FROM users WHERE email = ?';
     db.query(query, [email], callback);
+};
+
+export const fetchUserProfile = async (userId) => {
+    try {
+        const query = `SELECT * FROM users WHERE id = ?`;
+
+        const [results] = await db.promise().query(query, [userId]);
+
+        if (results.length === 0) {
+            throw new Error('User not found');
+        }
+
+        // Destructuring the first row of the result
+        const {firstName, lastName, email, created} = results[0];
+
+        const user = {
+            firstName,
+            lastName,
+            email,
+            created
+        };
+        console.log(user);
+        return user;
+    } catch (err) {
+        throw err;
+    }
 };
