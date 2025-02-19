@@ -12,7 +12,7 @@ export const getDashboard = (req, res) => {
         if (err) throw err;
         return res.render('dashboard', {
             transactions,
-            userId,
+            userId: req.session.userId,
             title: 'Dashboard'
         });
     });

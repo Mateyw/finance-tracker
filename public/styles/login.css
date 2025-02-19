@@ -3,7 +3,16 @@
     align-items: center;
     justify-content: center;
     gap: 50px;
-    max-width: 1000px;
+    max-width: 50vw;
+    max-height: 50vh;
+}
+
+.main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0 auto;
 }
 
 .card {
@@ -13,6 +22,8 @@
     box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
     width: 300px;
     text-align: center;
+    height: clamp(300px, 500px, 100%);
+    max-height: min-content;
 }
 
 .card h2 {
@@ -112,4 +123,16 @@ input {
 
 .cta-button::before {
     content: '🔑 ';
+}
+
+@media screen and (max-width: 1920px) {
+    .container {
+        width: 1000px;
+        height: 1000px;
+    }
+
+    .card {
+        width: 100%;
+        height: clamp(300px, 500px, 100%);
+    }
 }

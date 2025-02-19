@@ -1,8 +1,15 @@
+.main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
 .profile-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 80vh;
+    height: 50vh;
 }
 
 .profile-card {
