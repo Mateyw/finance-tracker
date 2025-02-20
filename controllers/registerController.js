@@ -35,7 +35,7 @@ export const registerUser = async (req, res) => {
         (err, result) => {
             if (err) {
                 return res.render('register', {
-                    message: 'Database error occurred!',
+                    message: err.message,
                     title: 'Register',
                     userId: req.session.userId
                 });
