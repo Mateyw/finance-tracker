@@ -57,3 +57,18 @@ max-height: min-content;
     cursor: pointer;
     margin-top: 15px;
 }
+
+.edit-btn.inactive,
+.save-btn.inactive {
+    display: none;
+}
+
+.save-btn {
+    background-color: #4da6ff;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 15px;
+}

@@ -9,6 +9,7 @@
     </title>
     <%- include('./partials/layout.ejs') %>
         <link rel="stylesheet" type="text/css" href="/styles/profile.css">
+        <script src="/js/handle-edit-profile.js" defer></script>
 </head>
 
 <body>
@@ -20,18 +21,19 @@
                     <h2>My Profile</h2>
                     <div class="profile-info">
                         <label>Full Name:</label>
-                        <input type="text" value="<%=fullName %>" id="fullName" name="fullName" disabled>
+                        <input class="input" type="text" value="<%=fullName %>" id="fullName" name="fullName" disabled>
 
                         <label>Email:</label>
-                        <input type="email" value="<%=email %>" id="email" name="email" disabled>
+                        <input class="input" type="email" value="<%=email %>" id="email" name="email" disabled>
 
                         <label>Password:</label>
-                        <input type="password" value="********" disabled>
+                        <input class="input" type="password" value="********" disabled>
 
                         <label>Account Created:</label>
-                        <input type="text" value="<%=created %>" id="created" name="created" disabled>
+                        <input class="input" type="text" value="<%=created %>" id="created" name="created" disabled>
 
                         <button class="edit-btn">Edit Profile</button>
+                        <button class="save-btn inactive">Save</button>
                     </div>
                 </div>
             </div>
