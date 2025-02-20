@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        <%= title %>
+    </title>
+    <%- include('./partials/layout.ejs') %>
+        <link rel="stylesheet" href="/styles/transactions.css">
+
+        <script src="/js/handle-session-check.js" defer></script>
+
+<body>
+
+    <%- include('./partials/header.ejs', { userId: userId }) %>
+
+        <main class="main">
+            <div class="title-container">
+                <h1 id="title">Transactions</h1>
+            </div>
+            <div class="transactions-container">
+                <div class="transaction-item">
+                    <div class="logo-container">
+                        <img src="https://th.bing.com/th/id/R.7dbd475618ede9596808560157b02609?rik=4UpsAHO2yWdk5Q&riu=http%3a%2f%2fwww.coolhdwallpapers.net%2fgallery%2fadidas-logo-black-background-wallpaper.jpg&ehk=nLwErEMDIKps3Cilshtuc469OS295PnDo0K4Wkd15Vw%3d&risl=&pid=ImgRaw&r=0"
+                            alt="#">
+                    </div>
+                    <div class="company-container">
+                        <h2 class="company-name">Company Name</h2>
+                        <p class="payment-method">Payment Method</p>
+                    </div>
+                    <div class="amount-container">
+                        <span class="transaction-amount">+800,00€</span>
+                    </div>
+                </div>
+                <div class="transaction-item">
+                    <div class="logo-container">
+                        <img src="https://images.unsplash.com/photo-1533450718592-29d45635f0a9?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjEyMDd9"
+                            alt="#">
+                    </div>
+                    <div class="company-container">
+                        <h2 class="company-name">Company Name</h2>
+                        <p class="payment-method">Payment Method</p>
+                    </div>
+                    <div class="amount-container">
+                        <span class="transaction-amount">+800,00€</span>
+                    </div>
+                </div>
+                <div class="transaction-item">
+                    <div class="logo-container">
+                        <img src="https://th.bing.com/th/id/OIP._7rmr0kzXPtGip_IRlF2GAHaGN?rs=1&pid=ImgDetMain" alt="#">
+                    </div>
+                    <div class="company-container">
+                        <h2 class="company-name">Company Name</h2>
+                        <p class="payment-method">Payment Method</p>
+                    </div>
+                    <div class="amount-container">
+                        <span class="transaction-amount">+800,00€</span>
+                    </div>
+                </div>
+                <div class="transaction-item">
+                    <div class="logo-container">
+                        <img src="https://th.bing.com/th/id/R.7dbd475618ede9596808560157b02609?rik=4UpsAHO2yWdk5Q&riu=http%3a%2f%2fwww.coolhdwallpapers.net%2fgallery%2fadidas-logo-black-background-wallpaper.jpg&ehk=nLwErEMDIKps3Cilshtuc469OS295PnDo0K4Wkd15Vw%3d&risl=&pid=ImgRaw&r=0"
+                            alt="#">
+                    </div>
+                    <div class="company-container">
+                        <h2 class="company-name">Company Name</h2>
+                        <p class="payment-method">Payment Method</p>
+                    </div>
+                    <div class="amount-container">
+                        <span class="transaction-amount">+800,00€</span>
+                    </div>
+                </div>
+                <div class="transaction-item">
+                    <div class="logo-container">
+                        <img src="https://images.unsplash.com/photo-1533450718592-29d45635f0a9?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjEyMDd9"
+                            alt="#">
+                    </div>
+                    <div class="company-container">
+                        <h2 class="company-name">Company Name</h2>
+                        <p class="payment-method">Payment Method</p>
+                    </div>
+                    <div class="amount-container">
+                        <span class="transaction-amount">+800,00€</span>
+                    </div>
+                </div>
+                <div class="transaction-item">
+                    <div class="logo-container">
+                        <img src="https://th.bing.com/th/id/OIP._7rmr0kzXPtGip_IRlF2GAHaGN?rs=1&pid=ImgDetMain" alt="#">
+                    </div>
+                    <div class="company-container">
+                        <h2 class="company-name">Company Name</h2>
+                        <p class="payment-method">Payment Method</p>
+                    </div>
+                    <div class="amount-container">
+                        <span class="transaction-amount">+800,00€</span>
+                    </div>
+                </div>
+                <div class="transaction-item">
+                    <div class="logo-container">
+                        <img src="https://th.bing.com/th/id/R.7dbd475618ede9596808560157b02609?rik=4UpsAHO2yWdk5Q&riu=http%3a%2f%2fwww.coolhdwallpapers.net%2fgallery%2fadidas-logo-black-background-wallpaper.jpg&ehk=nLwErEMDIKps3Cilshtuc469OS295PnDo0K4Wkd15Vw%3d&risl=&pid=ImgRaw&r=0"
+                            alt="#">
+                    </div>
+                    <div class="company-container">
+                        <h2 class="company-name">Company Name</h2>
+                        <p class="payment-method">Payment Method</p>
+                    </div>
+                    <div class="amount-container">
+                        <span class="transaction-amount">+800,00€</span>
+                    </div>
+                </div>
+                <div class="transaction-item">
+                    <div class="logo-container">
+                        <img src="https://images.unsplash.com/photo-1533450718592-29d45635f0a9?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjEyMDd9"
+                            alt="#">
+                    </div>
+                    <div class="company-container">
+                        <h2 class="company-name">Company Name</h2>
+                        <p class="payment-method">Payment Method</p>
+                    </div>
+                    <div class="amount-container">
+                        <span class="transaction-amount">+800,00€</span>
+                    </div>
+                </div>
+                <div class="transaction-item">
+                    <div class="logo-container">
+                        <img src="https://th.bing.com/th/id/OIP._7rmr0kzXPtGip_IRlF2GAHaGN?rs=1&pid=ImgDetMain" alt="#">
+                    </div>
+                    <div class="company-container">
+                        <h2 class="company-name">Company Name</h2>
+                        <p class="payment-method">Payment Method</p>
+                    </div>
+                    <div class="amount-container">
+                        <span class="transaction-amount">+800,00€</span>
+                    </div>
+                </div>
+                <div class="transaction-item">
+                    <div class="logo-container">
+                        <img src="https://th.bing.com/th/id/R.7dbd475618ede9596808560157b02609?rik=4UpsAHO2yWdk5Q&riu=http%3a%2f%2fwww.coolhdwallpapers.net%2fgallery%2fadidas-logo-black-background-wallpaper.jpg&ehk=nLwErEMDIKps3Cilshtuc469OS295PnDo0K4Wkd15Vw%3d&risl=&pid=ImgRaw&r=0"
+                            alt="#">
+                    </div>
+                    <div class="company-container">
+                        <h2 class="company-name">Company Name</h2>
+                        <p class="payment-method">Payment Method</p>
+                    </div>
+                    <div class="amount-container">
+                        <span class="transaction-amount">+800,00€</span>
+                    </div>
+                </div>
+                <div class="transaction-item">
+                    <div class="logo-container">
+                        <img src="https://images.unsplash.com/photo-1533450718592-29d45635f0a9?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjEyMDd9"
+                            alt="#">
+                    </div>
+                    <div class="company-container">
+                        <h2 class="company-name">Company Name</h2>
+                        <p class="payment-method">Payment Method</p>
+                    </div>
+                    <div class="amount-container">
+                        <span class="transaction-amount">+800,00€</span>
+                    </div>
+                </div>
+                <div class="transaction-item">
+                    <div class="logo-container">
+                        <img src="https://th.bing.com/th/id/OIP._7rmr0kzXPtGip_IRlF2GAHaGN?rs=1&pid=ImgDetMain" alt="#">
+                    </div>
+                    <div class="company-container">
+                        <h2 class="company-name">Company Name</h2>
+                        <p class="payment-method">Payment Method</p>
+                    </div>
+                    <div class="amount-container">
+                        <span class="transaction-amount">+800,00€</span>
+                    </div>
+                </div>
+                <div class="transaction-item">
+                    <div class="logo-container">
+                        <img src="https://th.bing.com/th/id/R.7dbd475618ede9596808560157b02609?rik=4UpsAHO2yWdk5Q&riu=http%3a%2f%2fwww.coolhdwallpapers.net%2fgallery%2fadidas-logo-black-background-wallpaper.jpg&ehk=nLwErEMDIKps3Cilshtuc469OS295PnDo0K4Wkd15Vw%3d&risl=&pid=ImgRaw&r=0"
+                            alt="#">
+                    </div>
+                    <div class="company-container">
+                        <h2 class="company-name">Company Name</h2>
+                        <p class="payment-method">Payment Method</p>
+                    </div>
+                    <div class="amount-container">
+                        <span class="transaction-amount">+800,00€</span>
+                    </div>
+                </div>
+                <div class="transaction-item">
+                    <div class="logo-container">
+                        <img src="https://images.unsplash.com/photo-1533450718592-29d45635f0a9?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjEyMDd9"
+                            alt="#">
+                    </div>
+                    <div class="company-container">
+                        <h2 class="company-name">Company Name</h2>
+                        <p class="payment-method">Payment Method</p>
+                    </div>
+                    <div class="amount-container">
+                        <span class="transaction-amount">+800,00€</span>
+                    </div>
+                </div>
+                <div class="transaction-item">
+                    <div class="logo-container">
+                        <img src="https://th.bing.com/th/id/OIP._7rmr0kzXPtGip_IRlF2GAHaGN?rs=1&pid=ImgDetMain" alt="#">
+                    </div>
+                    <div class="company-container">
+                        <h2 class="company-name">Company Name</h2>
+                        <p class="payment-method">Payment Method</p>
+                    </div>
+                    <div class="amount-container">
+                        <span class="transaction-amount">+800,00€</span>
+                    </div>
+                </div>
+                <div class="transaction-item">
+                    <div class="logo-container">
+                        <img src="https://th.bing.com/th/id/R.7dbd475618ede9596808560157b02609?rik=4UpsAHO2yWdk5Q&riu=http%3a%2f%2fwww.coolhdwallpapers.net%2fgallery%2fadidas-logo-black-background-wallpaper.jpg&ehk=nLwErEMDIKps3Cilshtuc469OS295PnDo0K4Wkd15Vw%3d&risl=&pid=ImgRaw&r=0"
+                            alt="#">
+                    </div>
+                    <div class="company-container">
+                        <h2 class="company-name">Company Name</h2>
+                        <p class="payment-method">Payment Method</p>
+                    </div>
+                    <div class="amount-container">
+                        <span class="transaction-amount">+800,00€</span>
+                    </div>
+                </div>
+                <div class="transaction-item">
+                    <div class="logo-container">
+                        <img src="https://images.unsplash.com/photo-1533450718592-29d45635f0a9?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjEyMDd9"
+                            alt="#">
+                    </div>
+                    <div class="company-container">
+                        <h2 class="company-name">Company Name</h2>
+                        <p class="payment-method">Payment Method</p>
+                    </div>
+                    <div class="amount-container">
+                        <span class="transaction-amount">+800,00€</span>
+                    </div>
+                </div>
+                <div class="transaction-item">
+                    <div class="logo-container">
+                        <img src="https://th.bing.com/th/id/OIP._7rmr0kzXPtGip_IRlF2GAHaGN?rs=1&pid=ImgDetMain" alt="#">
+                    </div>
+                    <div class="company-container">
+                        <h2 class="company-name">Company Name</h2>
+                        <p class="payment-method">Payment Method</p>
+                    </div>
+                    <div class="amount-container">
+                        <span class="transaction-amount">+800,00€</span>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+
+
+        <%- include('./partials/footer.ejs') %>
+
+</body>
+
+</html>

@@ -15,6 +15,7 @@ import session from 'express-session';
 // Import custom routes
 import indexRoutes from './routes/index.js';
 import dashboardRoutes from './routes/dashboard.js';
+import transactionsRoutes from './routes/transactions.js';
 import loginRoutes from './routes/login.js';
 import registerRoutes from './routes/register.js';
 import addTransactionRoutes from './routes/addTransaction.js';
@@ -55,6 +56,7 @@ app.use(
 // Routes
 app.use(indexRoutes);
 app.use(dashboardRoutes);
+app.use(transactionsRoutes);
 app.use(loginRoutes);
 app.use(registerRoutes);
 app.use(addTransactionRoutes);

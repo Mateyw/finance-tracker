@@ -1,6 +1,6 @@
 header {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     width: 100vw;
     height: clamp(50px, 10vh, 100px);
@@ -14,10 +14,11 @@ header {
 .header-title {
     flex: 1;
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: center;
     margin: auto 5%;
     font-weight: bold;
+    font-size: 1rem;
 }
 
 .nav-container {

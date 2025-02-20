@@ -1,0 +1,62 @@
+<div>
+                <canvas id="transactionsChart" width="400" height="200"></canvas>
+            </div>
+            
+            
+            <script>
+
+            const transactions = [
+                { type: 'income', amount: 500, category: 'Salary', date: '2025-02-01' },
+                { type: 'expense', amount: 200, category: 'Food', date: '2025-02-03' },
+                { type: 'income', amount: 700, category: 'Freelance', date: '2025-02-05' },
+                { type: 'expense', amount: 150, category: 'Transport', date: '2025-02-06' }
+            ];
+
+            const income = transactions.filter(t => t.type === 'income').map(t => t.amount);
+            const expenses = transactions.filter(t => t.type === 'expense').map(t => t.amount);
+            const dates = transactions.map(t => new Date(t.date).toLocaleDateString());
+
+            const ctx = document.getElementById('transactionsChart').getContext('2d');
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: dates,
+                    datasets: [
+                        {
+                            label: 'Income',
+                            data: income,
+                            borderColor: 'green',
+                            backgroundColor: 'rgba(0, 255, 0, 0.2)',
+                            fill: true
+                        },
+                        {
+                            label: 'Expenses',
+                            data: expenses,
+                            borderColor: 'red',
+                            backgroundColor: 'rgba(255, 0, 0, 0.2)',
+                            fill: true
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: true,
+                    scales: {
+                        x: {
+                            type: 'category', // Verwende 'category' anstelle von 'time'
+                            title: {
+                                display: true,
+                                text: 'Date'
+                            }
+                        },
+                        y: {
+                            beginAtZero: true,
+                            title: {
+                                display: true,
+                                text: 'Amount in €'
+                            }
+                        }
+                    }
+                }
+            });
+        </script>

@@ -16,6 +16,6 @@ main {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    background-color: #f0f0f0;
+    background-color: white;
     padding: 1%;
 }
