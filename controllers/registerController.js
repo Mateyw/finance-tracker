@@ -1,5 +1,5 @@
 import bcrypt from 'bcryptjs';
-import {createUser} from '../models/userModel.js';
+import { createUser } from '../models/userModel.js';
 
 export const getRegister = (req, res) => {
     return res.render('register', {
@@ -10,7 +10,7 @@ export const getRegister = (req, res) => {
 };
 
 export const registerUser = async (req, res) => {
-    const {firstName, lastName, email, password, confirmPassword} = req.body;
+    const { firstName, lastName, email, password, confirmPassword } = req.body;
 
     const date = new Date();
 

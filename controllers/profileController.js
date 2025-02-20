@@ -1,4 +1,4 @@
-import {fetchUserProfile} from '../models/userModel.js';
+import { fetchUserProfile } from '../models/userModel.js';
 
 export const getProfile = async (req, res) => {
     // Check if user is logged in
@@ -13,13 +13,14 @@ export const getProfile = async (req, res) => {
             return res.status(404).send('User not found');
         }
 
-        const {firstName, lastName, email, created} = user;
+        const { firstName, lastName, email, created } = user;
 
         const fullName = `${firstName} ${lastName}`;
 
-        const formattedCreatedDate = new Date(created)
-            .toISOString()
-            .split('T')[0];
+        const formattedCreatedDate = new Date(created).toLocaleDateString(
+            'en-GB',
+            { timeZone: 'Europe/Berlin' }
+        );
 
         return res.render('profile', {
             title: 'Profile',

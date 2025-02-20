@@ -60,6 +60,7 @@ export const fetchUserProfile = async (userId) => {
         // Destructuring the first row of the result
         const {firstName, lastName, email, created} = results[0];
 
+
         const user = {
             firstName,
             lastName,
