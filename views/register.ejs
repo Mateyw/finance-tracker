@@ -9,6 +9,7 @@
     </title>
     <%- include('./partials/layout.ejs') %>
         <link rel="stylesheet" type="text/css" href="/styles/register.css">
+        <script src="/js/handle-show-password.js" defer></script>
 </head>
 
 <body>
@@ -25,12 +26,12 @@
                             <input type="email" name="email" id="email" placeholder="Email" required>
                             <div class="password-wrapper">
                                 <input type="password" name="password" id="password" placeholder="Password" required>
-                                <span>👁️</span>
+                                <span class="eye-icon"><i class="fa-solid fa-eye-slash eye1"></i></span>
                             </div>
                             <div class="password-wrapper">
                                 <input type="password" name="confirmPassword" id="confirmPassword"
                                     placeholder="Repeat Password" required>
-                                <span>👁️</span>
+                                <span class="eye-icon"><i class="fa-solid fa-eye-slash eye2"></i></span>
                             </div>
                         </div>
                         <button type="submit" class="btn">Register</button>

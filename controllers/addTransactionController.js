@@ -34,8 +34,9 @@ export const postAddTransaction = async (req, res) => {
         (err, results) => {
             if (err)
                 return res.render('addTransaction', {
-                    message: 'Transaction could not be added',
-                    userId: req.session.userId
+                    message: err.message,
+                    userId: req.session.userId, 
+                    title: 'Add Transaction'
                 });
 
             console.log('Transaction added to database');
