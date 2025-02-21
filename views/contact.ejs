@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <%- include('./partials/layout.ejs') %>
+    <link rel="stylesheet" type="text/css" href="/styles/contact.css">
+</head>
+
+<body>
+    <%- include('./partials/header.ejs', { userId: userId }) %>
+
+    <main class="main">
+        <div class="container">
+            <!-- Contact Form Section -->
+            <div class="card">
+                <h2>Contact Us</h2>
+                <p>We’d love to hear from you. Fill out the form below.</p>
+                <form id="contactForm" action="/send-email" method="POST">
+                    <div class="input-group">
+                        <input type="text" name="name" id="name" placeholder="Your Name" required>
+                        <input type="email" name="email" id="email" placeholder="Your Email" required>
+                        <textarea name="message" id="message" placeholder="Your Message" rows="4" required></textarea>
+                    </div>
+                    <button type="submit" class="btn">Send Message</button>
+                </form>
+            </div>
+
+            <!-- Contact Information Section -->
+            <div class="right-section">
+                <h1>Get in Touch</h1>
+                <p>Feel free to reach out for any inquiries.</p>
+                <p><strong>Email:</strong> <a href="mailto:support@example.com">support@example.com</a></p>
+                <p><strong>Phone:</strong> +49 123 456 789</p>
+                <p><strong>Address:</strong> Finance Street, 10115 Berlin, Germany</p>
+            </div>
+        </div>
+    </main>
+
+    <%- include('./partials/footer.ejs') %>
+</body>
+
+</html>

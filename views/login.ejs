@@ -9,7 +9,7 @@
     </title>
     <%- include('./partials/layout.ejs') %>
         <link rel="stylesheet" type="text/css" href="/styles/login.css">
-
+        <script src="/js/handle-show-password-login.js" defer></script>
 </head>
 
 <body>
@@ -24,8 +24,10 @@
                         <div class="input-group">
                             <input type="email" name="email" id="email" placeholder="Email">
                             <div class="password-wrapper">
-                                <input type="password" name="password" placeholder="Password">
-                                <span>👁️</span>
+                                <input type="password" name="password" id="password" placeholder="Password">
+                                <span>
+                                    <i class="fa-solid fa-eye-slash eye"></i>
+                                </span>
                             </div>
                         </div>
                         <button type="submit" class="btn">Login</button>
