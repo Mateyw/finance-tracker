@@ -1,0 +1,40 @@
+{
+    "data": [
+      {
+        "transferId": "TXN123456",
+        "paymentMethod": "Credit Card",
+        "transactionAmount": 49.99,
+        "recipientName": "Amazon",
+        "logoUrl": "https://logo.clearbit.com/amazon.com"
+      },
+      {
+        "transferId": "TXN789012",
+        "paymentMethod": "PayPal",
+        "transactionAmount": 15.50,
+        "recipientName": "Spotify",
+        "logoUrl": "https://logo.clearbit.com/spotify.com"
+      },
+      {
+        "transferId": "TXN345678",
+        "paymentMethod": "Bank Transfer",
+        "transactionAmount": 120.00,
+        "recipientName": "Netflix",
+        "logoUrl": "https://logo.clearbit.com/netflix.com"
+      },
+      {
+        "transferId": "TXN901234",
+        "paymentMethod": "Debit Card",
+        "transactionAmount": 30.00,
+        "recipientName": "Apple",
+        "logoUrl": "https://logo.clearbit.com/apple.com"
+      },
+      {
+        "transferId": "TXN567890",
+        "paymentMethod": "Google Pay",
+        "transactionAmount": 9.99,
+        "recipientName": "YouTube Premium",
+        "logoUrl": "https://logo.clearbit.com/youtube.com"
+      }
+    ]
+  }
+  

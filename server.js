@@ -22,6 +22,7 @@ import addTransactionRoutes from './routes/addTransaction.js';
 import logoutRoutes from './routes/logout.js';
 import checkSessionState from './routes/session.js';
 import profileRoutes from './routes/profile.js';
+import transactionAPIRoutes from './routes/transactionAPI.js';
 import errorRoutes from './routes/404.js';
 
 // Convert import.meta.url to __dirname equivalent
@@ -57,6 +58,7 @@ app.use(
 app.use(indexRoutes);
 app.use(dashboardRoutes);
 app.use(transactionsRoutes);
+app.use('/api',transactionAPIRoutes);
 app.use(loginRoutes);
 app.use(registerRoutes);
 app.use(addTransactionRoutes);
