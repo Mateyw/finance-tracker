@@ -1,13 +1,28 @@
+html {
+    overflow:   scroll;
+    overflow-x: hidden;
+  }
+  
+  ::-webkit-scrollbar {
+      background: transparent; /* make scrollbar transparent */
+  }
+
+
+.main {
+    width: 100vw;
+}
 
 .dashboard-container {
     width: 100%;
-    height: 73vh; /* Später ändern zu height: auto; oder weglassen*/
+    /* height: 73vh; Später ändern zu height: auto; oder weglassen */
+    /* height: auto; */
+    max-height: min-content;
     background-color: white;
     border-radius: 10px;
     box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
     margin-top: 1%;
     position: relative;
-    overflow-y: auto;
+    /* overflow-y: auto; */
 }
 
 .dropdown-container{
@@ -60,12 +75,13 @@
 .charts-container{
     width: 98%;
     height: auto;
-    /* background-color: lightpink; */
+    max-height: min-content;
+    background-color: lightpink;
     margin: 1%;
     border-radius: 10px;
     display: grid;
     grid-template-rows: repeat(2, 1fr);
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(10, 1fr);
     gap: 1%;
     padding: 1% 1% 2%;
 }
@@ -80,7 +96,7 @@
 
 .line-chart-container{
     grid-row: 1 / 2;
-    grid-column: 1 / 4;
+    grid-column: 1 / 8;
 
     
 }
@@ -91,19 +107,21 @@
 .pie-chart-container{
   
     grid-row: 1 / 2;
-    grid-column: 4 / 6;
+    grid-column: 8 / 11;
 
     
 }
-
-.other-chart-container{
-    grid-row: 2 / 3;
-    grid-column: 4 / 6;
-}
-
 
 .bar-chart-container{
     
     grid-row: 2 / 3;
-    grid-column: 1 / 4;
+    grid-column: 1 / 8;
 }
+
+.other-chart-container{
+    grid-row: 2 / 3;
+    grid-column: 8 / 11;
+}
+
+
+

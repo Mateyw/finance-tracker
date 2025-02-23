@@ -1,6 +1,8 @@
 export const getLogout = (req, res) => {
     const userId = req.session.userId;
-    if (userId) {
+    if (!userId) {
+        res.redirect('/login');
+    } else {
         req.session.destroy((err) => {
             if (err) {
                 console.error('Error destroying session:', err);
@@ -11,6 +13,7 @@ export const getLogout = (req, res) => {
 
             // Clear session cookie
             res.clearCookie('connect.sid'); // Default session cookie name
+            console.log(req.session);
             res.redirect('/login'); // Redirect to login page
         });
     }

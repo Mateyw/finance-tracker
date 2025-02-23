@@ -10,7 +10,8 @@ import path from 'path';
 import {fileURLToPath} from 'url';
 
 // Import session library
-import session from 'express-session';
+import session from 'express-session'; 
+import sessionStore from './database/db_sessionStore.js'; // Der obige Code als eigenes Modul
 
 // Import custom routes
 import indexRoutes from './routes/index.js';
@@ -47,16 +48,18 @@ app.use(express.json());
 // Use session middleware
 app.use(
     session({
-        secret: process.env.SESSION_SECRET,
+        secret: process.env.SESSION_SECRET, // Verschlüsselt die Session-ID
         resave: false,
         saveUninitialized: true,
-        cookie: {
-            maxAge: 60 * 30 * 1000, // 30 minutes
+        store: sessionStore, // Speichert die Session in der Datenbank (statt nur im Arbeitsspeicher)
+        cookie: { // Speichert eine Session-ID im Browser-Cookie
+            maxAge: 60 * 30 * 1000, // Die Session läuft nach 30 Minuten ab
             httpOnly: true,
             secure: false // Set to true in production with HTTPS
         }
     })
 );
+
 
 // Routes
 app.use(indexRoutes);
