@@ -1,16 +1,21 @@
-.main {
+main {
+    width: 90vw;
+    height: calc(100vh - 100px);
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    background-color: white;
+    padding: 1%;
+    margin: 0 auto;
+    padding-bottom: 6%; /* Add extra space for footer */
 }
 
 .profile-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 50vh;
-    height:calc(100vh - 100px);
+    height: auto;
 
 }
 
@@ -22,8 +27,9 @@
     width: 350px;
     text-align: center;
     height: 100%;
-max-height: min-content;
+    max-height: min-content;
 }
+
 .profile-card h2 {
     margin-bottom: 20px;
 }

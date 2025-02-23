@@ -1,0 +1,11 @@
+x Axis:
+- Months (Jan - Dec)
+
+
+y Axis:
+- Amount in €
+
+Top:
+- Green: Income
+- Red: Expense
+-> both clickable to show either of them or both

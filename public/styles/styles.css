@@ -1,7 +1,7 @@
 @import 'https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap';
 
 html {
-    overflow:   scroll;
+    overflow:   hidden;
     overflow-x: hidden;
   }
   
@@ -20,7 +20,7 @@ body {
 }
 
 main {
-    width: 100%;
+    width: 90vw;
     height: 100vh;
     flex: 1;
     display: flex;
@@ -28,4 +28,5 @@ main {
     justify-content: flex-start;
     background-color: white;
     padding: 1%;
+    margin: 0 auto;
 }
