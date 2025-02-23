@@ -1,3 +1,4 @@
+
 .dashboard-container {
     width: calc(100vw - 3.2%);
     min-height: 100vh; /* Später ändern zu height: auto; oder weglassen*/
@@ -60,14 +61,14 @@
 
 .charts-container{
     width: 98%;
-    height: 200vh;
+    height: auto;
     background-color: lightpink;
     margin: 1%;
     border-radius: 10px;
     display: grid;
     grid-template-rows: repeat(3, 2fr);
     grid-template-columns: 1fr 1fr;
-    gap: 2%;
+    gap: 1%;
     padding: 1%;
 }
 

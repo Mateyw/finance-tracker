@@ -18,7 +18,7 @@ header {
     align-items: center;
     margin: auto 5%;
     font-weight: bold;
-    font-size: 1rem;
+    font-size: 1.25rem;
 }
 
 .nav-container {
@@ -37,6 +37,10 @@ header {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+}
+
+.nav > li > a {
+    font-size: 1.25rem;
 }
 
 .nav > li > a:hover {
@@ -58,6 +62,7 @@ header {
     border: 2px solid white;
     border-radius: 5px;
     padding: 5px;
+    font-size: 1.25rem;
 }
 
 .logout-container > #btn-logout:hover {

@@ -16,3 +16,7 @@ footer {
     justify-content: space-evenly;
     align-items: center;
 }
+
+.nav > li > a {
+    font-size: 1.25rem;
+}
