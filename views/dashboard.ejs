@@ -17,13 +17,80 @@
     <%- include('./partials/header.ejs', { userId: userId }) %>
 
         <main class="main">
+            <h1>Dashboard</h1>
+
             <div class="dashboard-container">
-                <h1>Dashboard</h1>
-                
+                <div class="dropdown-container">
+
+                    <div class="category dropdown">
+                        <div class="label-container">
+                            <label for="category">Category</label>
+                        </div>
+                        <div class="select-container">
+                            <select name="category" id="category">
+                                <option value="Test">Test1</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="type dropdown">
+                        <div class="label-container">
+                        <label for="type">Type</label>
+                        </div>
+                        <div class="select-container">
+                            <select name="type" id="type">
+                                <option value="Test">Test1</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="fromDate dropdown">
+                        <div class="label-container">
+                            <label for="fromDate">From</label>
+                        </div>
+                        <div class="select-container">
+                            <select name="fromDate" id="fromDate">
+                                <option value="Test">Test1</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="toDate dropdown">
+                        <div class="label-container">
+                            <label for="toDate">To</label>
+                        </div>
+                        <div class="select-container">
+                            <select name="toDate" id="toDate">
+                                <option value="Test">Test1</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="charts-container">
+                    <div class="line-chart-container">
+                        <p>Line Chart</p>
+                    </div>
+
+                    <div class="pie-chart-container">
+                        <p>Pie Chart</p>
+    
+                    </div>
+
+                    <div class="other-chart-container">
+                        <p>Other Chart</p>
+    
+                    </div>
+
+                    <div class="bar-chart-container">
+                        <p>Bar Chart</p>
+                    </div>
+                    
+                </div>
             </div>
 
         </main>
-        
+
 
         <%- include('./partials/footer.ejs') %>
 

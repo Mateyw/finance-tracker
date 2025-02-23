@@ -1,0 +1,46 @@
+<div class="dropdown-container">
+                    <div class="category dropdown">
+                        <label for="category">Category</label>
+                        <select name="category" id="category">
+                            <!-- returned category array will be looped through with foreach and display an option based on how many the db returns -->
+                            <% if(category) { %>
+                                <% category.forEach(category => { %>
+                                    <option value="<%= category %>"></option> 
+                                <% }) %>
+                            <% } %>
+                        </select>
+                    </div>
+                    <div class="type dropdown">
+                        <label for="type">Type</label>
+                        <select name="type" id="type">
+                            <!-- returned type array will be looped through with foreach and display an option based on how many the db returns -->
+                            <% if(type) { %>
+                                <% type.forEach(type => { %>
+                                    <option value="<%= type %>"></option> 
+                                <% }) %>
+                            <% } %>
+                        </select>
+                    </div>
+                    <div class="fromDate dropdown">
+                        <label for="fromDate">From</label>
+                        <select name="fromDate" id="fromDate">
+                            <!-- returned fromDate array will be looped through with foreach and display an option based on how many the db returns -->
+                            <% if(fromDate) { %>
+                                <% fromDate.forEach(fromDate => { %>
+                                    <option value="<%= fromDate %>"></option> 
+                                <% }) %>
+                            <% } %>
+                        </select>
+                    </div>
+                    <div class="toDate dropdown">
+                        <label for="toDate">To</label>
+                        <select name="toDate" id="toDate">
+                            <!-- returned toDate array will be looped through with foreach and display an option based on how many the db returns -->
+                            <% if(toDate) { %>
+                                <% toDate.forEach(fromDate => { %>
+                                    <option value="<%= toDate %>"></option> 
+                                <% }) %>
+                            <% } %>
+                        </select>
+                    </div>
+                </div>
