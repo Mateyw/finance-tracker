@@ -7,7 +7,7 @@ new Chart(pieChart, {
       datasets: [
         {
         label: 'Income',
-        data: [12, 19], // change later to first value instead 12 -> Income and 19 -> Expense
+        data: [1, 12], // change later to first value instead 12 -> Income and 19 -> Expense
         borderWidth: 1,
       
       }
