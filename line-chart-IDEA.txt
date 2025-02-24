@@ -1,0 +1,13 @@
+x Axis:
+- Months (Jan - Dec)
+
+
+y Axis:
+- Amount in €
+- SUM all Income / Expenses for chosen time period
+- in the query add dynamically the chosen time period based on the dropdown selection
+
+Top:
+- Green: Income
+- Red: Expense
+-> both clickable to show either of them or both

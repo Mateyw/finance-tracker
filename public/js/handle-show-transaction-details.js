@@ -1,3 +1,4 @@
+
 const transactionsContainer = document.querySelector(".transactions-container");
 const main = document.querySelector(".main");
 

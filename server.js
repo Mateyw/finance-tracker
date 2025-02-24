@@ -10,7 +10,8 @@ import path from 'path';
 import {fileURLToPath} from 'url';
 
 // Import session library
-import session from 'express-session';
+import session from 'express-session'; 
+import sessionStore from './database/db_sessionStore.js'; // Der obige Code als eigenes Modul
 
 // Import custom routes
 import indexRoutes from './routes/index.js';
@@ -21,7 +22,12 @@ import registerRoutes from './routes/register.js';
 import addTransactionRoutes from './routes/addTransaction.js';
 import logoutRoutes from './routes/logout.js';
 import checkSessionState from './routes/session.js';
+import impressumRoutes from './routes/impressum.js';
+import termsAndConditionsRoutes from './routes/termsAndConditions.js';
+import policyRoutes from './routes/policy.js';
+import contactRoutes from './routes/contact.js';
 import profileRoutes from './routes/profile.js';
+import transactionAPIRoutes from './routes/transactionAPI.js';
 import errorRoutes from './routes/404.js';
 
 // Convert import.meta.url to __dirname equivalent
@@ -42,26 +48,33 @@ app.use(express.json());
 // Use session middleware
 app.use(
     session({
-        secret: process.env.SESSION_SECRET,
+        secret: process.env.SESSION_SECRET, // Verschlüsselt die Session-ID
         resave: false,
         saveUninitialized: true,
-        cookie: {
-            maxAge: 60 * 30 * 1000, // 30 minutes
+        store: sessionStore, // Speichert die Session in der Datenbank (statt nur im Arbeitsspeicher)
+        cookie: { // Speichert eine Session-ID im Browser-Cookie
+            maxAge: 60 * 30 * 1000, // Die Session läuft nach 30 Minuten ab
             httpOnly: true,
             secure: false // Set to true in production with HTTPS
         }
     })
 );
 
+
 // Routes
 app.use(indexRoutes);
 app.use(dashboardRoutes);
 app.use(transactionsRoutes);
+app.use('/api',transactionAPIRoutes);
 app.use(loginRoutes);
 app.use(registerRoutes);
 app.use(addTransactionRoutes);
 app.use(logoutRoutes);
 app.use(checkSessionState);
+app.use(impressumRoutes);
+app.use(termsAndConditionsRoutes);
+app.use(policyRoutes);
+app.use(contactRoutes);
 app.use(profileRoutes);
 app.use(errorRoutes);
 

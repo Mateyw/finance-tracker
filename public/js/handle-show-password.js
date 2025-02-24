@@ -1,3 +1,6 @@
+
+// register version
+
 const eye1 = document.querySelector('.eye1');
 const eye2 = document.querySelector('.eye2');
 
@@ -14,3 +17,4 @@ function togglePasswordVisibility(inputField, icon) {
 
 eye1.addEventListener('click', () => togglePasswordVisibility(inputPassword, eye1));
 eye2.addEventListener('click', () => togglePasswordVisibility(inputConfirmPassword, eye2));
+a

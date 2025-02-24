@@ -22,3 +22,11 @@ CREATE TABLE IF NOT EXISTS transactions (
     date DATE NOT NULL,
     FOREIGN KEY (user_id) REFERENCES users(id)
 );
+
+
+CREATE TABLE IF NOT EXISTS sessions (
+    session_id VARCHAR(128) NOT NULL PRIMARY KEY,
+    expires INT(11) UNSIGNED NOT NULL,
+    data TEXT NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+

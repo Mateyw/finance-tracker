@@ -9,6 +9,7 @@ header {
     position: relative;
     z-index: 1000;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    
 }
 
 .header-title {
@@ -18,7 +19,7 @@ header {
     align-items: center;
     margin: auto 5%;
     font-weight: bold;
-    font-size: 1rem;
+    font-size: 1.25rem;
 }
 
 .nav-container {
@@ -37,6 +38,11 @@ header {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+    gap: 20px;
+}
+
+.nav > li > a {
+    font-size: 1.25rem;
 }
 
 .nav > li > a:hover {
@@ -58,6 +64,7 @@ header {
     border: 2px solid white;
     border-radius: 5px;
     padding: 5px;
+    font-size: 1.25rem;
 }
 
 .logout-container > #btn-logout:hover {

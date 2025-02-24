@@ -1,5 +1,15 @@
 @import 'https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap';
 
+html {
+    overflow:   hidden;
+    overflow-x: hidden;
+  }
+  
+  ::-webkit-scrollbar {
+      width: 0px;
+      background: transparent; /* make scrollbar transparent */
+  }
+
 body {
     width: 100vw;
     min-height: 100vh;
@@ -10,7 +20,7 @@ body {
 }
 
 main {
-    width: 100%;
+    width: 90vw;
     height: 100vh;
     flex: 1;
     display: flex;
@@ -18,4 +28,5 @@ main {
     justify-content: flex-start;
     background-color: white;
     padding: 1%;
+    margin: 0 auto;
 }

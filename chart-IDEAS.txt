@@ -1,0 +1,1 @@
+Wenn keine Zeitperiode im Filter angewendet wird, dann soll ein Diagramm für bspw. die ganzen Kategorien oder je nachdem welche kategorie ausgewählt wurde im Filter, die allzeit ausgaben oder einnahmen anzeigen also die ausgaben oder einnahmen allgemein jemals 
