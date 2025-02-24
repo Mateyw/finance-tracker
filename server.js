@@ -13,6 +13,8 @@ import {fileURLToPath} from 'url';
 import session from 'express-session'; 
 import sessionStore from './database/db_sessionStore.js'; // Der obige Code als eigenes Modul
 
+import flash from 'connect-flash';
+
 // Import custom routes
 import indexRoutes from './routes/index.js';
 import dashboardRoutes from './routes/dashboard.js';
@@ -23,6 +25,7 @@ import addTransactionRoutes from './routes/addTransaction.js';
 import logoutRoutes from './routes/logout.js';
 import checkSessionState from './routes/session.js';
 import impressumRoutes from './routes/impressum.js';
+import transactionSumRoutes from './routes/transactionSum.js';
 import termsAndConditionsRoutes from './routes/termsAndConditions.js';
 import policyRoutes from './routes/policy.js';
 import contactRoutes from './routes/contact.js';
@@ -60,6 +63,7 @@ app.use(
     })
 );
 
+app.use(flash()); 
 
 // Routes
 app.use(indexRoutes);
@@ -74,6 +78,7 @@ app.use(checkSessionState);
 app.use(impressumRoutes);
 app.use(termsAndConditionsRoutes);
 app.use(policyRoutes);
+app.use('/api', transactionSumRoutes);
 app.use(contactRoutes);
 app.use(profileRoutes);
 app.use(errorRoutes);

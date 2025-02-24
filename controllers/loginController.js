@@ -1,12 +1,17 @@
 import {authenticateUser} from '../models/userModel.js';
 
+// rendert die login seite
 export const getLogin = (req, res) => {
+
+    const successMessage = req.flash('success');
+
     return res.render('login', {
-        message: null,
+        message: successMessage,
         userId: req.session.userId,
         title: 'Login'
     });
 };
+
 
 export const loginUser = async (req, res) => {
     const {email, password} = req.body;

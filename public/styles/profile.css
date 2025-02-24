@@ -8,7 +8,6 @@ main {
     background-color: white;
     padding: 1%;
     margin: 0 auto;
-    padding-bottom: 6%; /* Add extra space for footer */
 }
 
 .profile-container {

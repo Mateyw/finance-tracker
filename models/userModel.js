@@ -7,13 +7,15 @@ export const createUser = (
     email,
     hashedPassword,
     created,
+    state,
     callback
 ) => {
+
     const query =
-        'INSERT INTO users (firstName, lastName, email, password, created) VALUES (?, ?, ?, ?, ?)';
+        'INSERT INTO users (firstName, lastName, email, password, created, state) VALUES (?, ?, ?, ?, ?, ?)';
     db.query(
         query,
-        [firstName, lastName, email, hashedPassword, created],
+        [firstName, lastName, email, hashedPassword, created, state],
         callback
     );
 };

@@ -1,12 +1,28 @@
 const otherChart = document.getElementById('otherChart');
 
-new Chart(otherChart, {
+fetch('/api/getTransactionSum', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify({
+    userId: 14,
+    category: 'Food',
+    month: 2,
+    year: 2025,
+    type: 'Expense'
+  })
+})
+.then(response => response.json())
+.then(data => {
+  const amount = data.amount; // Assuming the response returns an object with a 'sum' property
+  new Chart(otherChart, {
     type: 'doughnut',
     data: {
-      labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+      labels: ['Food', 'Tech'],
       datasets: [{
-        label: '# of Votes',
-        data: [12, 19, 3, 5, 2, 3],
+        label: '# of Amount',
+        data: [amount, techAmount],
         borderWidth: 1
       }]
     },
@@ -18,3 +34,5 @@ new Chart(otherChart, {
       }
     }
   });
+})
+.catch(error => console.error('Error:', error));
