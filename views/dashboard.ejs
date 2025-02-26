@@ -15,6 +15,7 @@
         <script src="/js/charts/pie-chart.js" defer></script>
         <script src="/js/charts/other-chart.js" defer></script>
         <script src="/js/charts/bar-chart.js" defer></script>
+        <script src="/js/updateCharts/updateBarChart.js" defer></script>
 
 <body>
 
@@ -32,7 +33,11 @@
                         </div>
                         <div class="select-container">
                             <select name="category" id="category">
-                                <option value="Test">Test1</option>
+                                <% if(categories) { %>
+                                    <% categories.forEach(category => { %>
+                                        <option name="_category" value="<%= category.category_id %>"><%= category.name %></option>
+                                    <% }); %>
+                                <% }; %>
                             </select>
                         </div>
                     </div>
@@ -43,8 +48,11 @@
                         </div>
                         <div class="select-container">
                             <select name="type" id="type">
-                                <option value="Test">Test1</option>
-                            </select>
+                                <% if(types) { %>
+                                    <% types.forEach(type => { %>
+                                        <option name="_type" value="<%= type.type_id %>"><%= type.type %></option>
+                                    <% }); %>
+                                <% }; %>                            </select>
                         </div>
                     </div>
                     
@@ -53,9 +61,7 @@
                             <label for="fromDate">From</label>
                         </div>
                         <div class="select-container">
-                            <select name="fromDate" id="fromDate">
-                                <option value="Test">Test1</option>
-                            </select>
+                            <input type="date" name="_fromDate" id="fromDate">
                         </div>
                     </div>
 
@@ -64,9 +70,7 @@
                             <label for="toDate">To</label>
                         </div>
                         <div class="select-container">
-                            <select name="toDate" id="toDate">
-                                <option value="Test">Test1</option>
-                            </select>
+                                <input type="date" name="_toDate" id="toDate">
                         </div>
                     </div>
                 </div>

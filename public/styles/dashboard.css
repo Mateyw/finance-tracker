@@ -72,6 +72,19 @@ html {
     font-weight: bold;
 }
 
+.dropdown > .select-container {
+    width: 100%;
+}
+
+.dropdown > .select-container > select,
+.dropdown > .select-container > input {
+    max-width: min-content;
+    text-align: center;
+    border: none;
+    border-radius: 3px;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+}
+
 .charts-container{
     width: 98%;
     height: auto;
