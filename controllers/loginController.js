@@ -26,8 +26,11 @@ export const loginUser = async (req, res) => {
         }
 
         // ✅ User-ID in der Session speichern
+        // req.session.customName = table.primarykey
         req.session.userId = user.id;
         console.log(`User Id saved in session variable 'user.id': `, user.id);
+        console.log(`Req.session: `, req.session);
+
 
         res.redirect('/dashboard');
     });
